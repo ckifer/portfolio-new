@@ -25,5 +25,5 @@ install:
  
 script:
   - ng lint
-  - npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
+  - npm run test-headless
   - ng build --prod --base-href https://ckifer.github.io/portfolio-new/
