@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'ck-footer',
@@ -6,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
-
-  constructor() { }
+  icons: Observable<any[]>;
+  year = new Date().getFullYear();
+  constructor(db: AngularFirestore) {
+    this.icons = db.collection('socialIcons').valueChanges();
+  }
 
   ngOnInit() {
   }

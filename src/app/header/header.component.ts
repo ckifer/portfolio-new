@@ -11,7 +11,7 @@ export class HeaderComponent implements OnInit {
   items: Observable<any[]>;
 
   constructor(db: AngularFirestore) {
-    this.items = db.collection('headerItems').valueChanges();
+    this.items = db.collection('headerItems', ref => ref.orderBy('index')).valueChanges();
   }
 
   ngOnInit() {
