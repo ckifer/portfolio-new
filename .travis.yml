@@ -26,4 +26,4 @@ install:
 script:
   - ng lint
   - npm run test-headless
-  - ng build --prod --base-href https://ckifer.github.io/portfolio-new/
+  - npm run config -- --environment=prod && ng build --prod --base-href https://ckifer.github.io/portfolio-new/

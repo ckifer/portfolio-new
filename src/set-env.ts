@@ -4,16 +4,17 @@
 // store a projects environment variables in a .gitignore'd file
 require('dotenv').config();
 
-const fs = require('fs');
-const yargs = require('yargs');
+import { argv } from 'yargs';
+import { writeFile } from 'fs';
 
 // Would be passed to script like this:
 // `ts-node set-env.ts --environment=dev`
 // we get it from yargs's argv object
-const environment = yargs.argv.environment;
+const environment = argv.environment;
+let targetPath = `./src/environments/environment.ts`;
 const isProd = environment === 'prod';
+isProd ? targetPath = `./src/environments/environment.${environment}.ts` : targetPath = targetPath;
 
-const targetPath = `./src/environments/environment.${environment}.ts`;
 const envConfigFile = `
 export const environment = {
   production: ${isProd},
@@ -29,7 +30,7 @@ export const environment = {
 };
 `;
 
-fs.writeFile(targetPath, envConfigFile, (err) => {
+writeFile(targetPath, envConfigFile, (err) => {
   if (err) {
     console.log(err);
   }
