@@ -18,4 +18,8 @@ export class HeaderComponent implements OnInit {
 
   }
 
+  scroll(el: HTMLElement) {
+    el.scrollIntoView({ behavior: 'smooth' });
+  }
+
 }

@@ -1,5 +1,5 @@
 <header>
     <mat-card id="navbar-card" color="primary">
-      <button color="primary" class="menu-button" *ngFor="let item of items | async; index as i" mat-button>{{item.name}}</button>
+      <button (click)="scroll('#' + item.name)" color="primary" class="menu-button" *ngFor="let item of items | async; index as i" mat-button>{{item.name}}</button>
     </mat-card>
 </header>
