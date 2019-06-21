@@ -1,10 +1,10 @@
 dist: trusty
 sudo: false
- 
+
 language: node_js
 node_js:
   - "10"
-  
+
 addons:
   apt:
     sources:
@@ -15,15 +15,16 @@ addons:
 branches:
   only:
   - master
- 
+
 cache:
   directories:
      - ./node_modules
- 
+
 install:
   - npm install
- 
+
 script:
   - ng lint
+  - npm run config -- --environment=prod --key=$FIREBASE_KEY
   - npm run test-headless
-  - npm run config -- --environment=prod && ng build --prod --base-href https://ckifer.github.io/portfolio-new/
+  - ng build --prod --base-href https://ckifer.github.io/portfolio-new/

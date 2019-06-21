@@ -11,15 +11,20 @@ import { writeFile } from 'fs';
 // `ts-node set-env.ts --environment=dev`
 // we get it from yargs's argv object
 const environment = argv.environment;
+let key: any = process.env.FIREBASE_KEY;
 let targetPath = `./src/environments/environment.ts`;
 const isProd = environment === 'prod';
 isProd ? targetPath = `./src/environments/environment.${environment}.ts` : targetPath = targetPath;
+
+if (argv.key !== '' || argv.key != null) {
+  key = argv.key;
+}
 
 const envConfigFile = `
 export const environment = {
   production: ${isProd},
   firebase: {
-    apiKey: '${process.env.FIREBASE_KEY}',
+    apiKey: '${key}',
     authDomain: 'portfolio-a8df4.firebaseapp.com',
     databaseURL: 'https://portfolio-a8df4.firebaseio.com',
     projectId: 'portfolio-a8df4',
