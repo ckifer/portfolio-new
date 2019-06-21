@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FooterComponent } from './footer.component';
 import { MaterialModule } from 'modules/material.module';
-import { environment } from '../../environments/environment';
+import { environment } from '../../environments/environment.prod';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestore } from '@angular/fire/firestore';
 
