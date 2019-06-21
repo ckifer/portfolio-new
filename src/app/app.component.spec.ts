@@ -7,7 +7,7 @@ import { MaterialModule } from 'modules/material.module';
 import { FirebaseModule } from 'modules/firebase.module';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire';
-import { environment } from '../environments/environment';
+import { environment } from '../environments/environment.prod';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {

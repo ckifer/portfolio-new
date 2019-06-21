@@ -5,7 +5,7 @@
 require('dotenv').config();
 
 import { argv } from 'yargs';
-import { writeFile } from 'fs';
+import { writeFile, mkdir } from 'fs';
 
 // Would be passed to script like this:
 // `ts-node set-env.ts --environment=dev`
@@ -13,6 +13,7 @@ import { writeFile } from 'fs';
 const environment = argv.environment;
 let key: any = process.env.FIREBASE_KEY;
 let targetPath = `./src/environments/environment.ts`;
+const directoryPath = `./src/environments`;
 const isProd = environment === 'prod';
 isProd ? targetPath = `./src/environments/environment.${environment}.ts` : targetPath = targetPath;
 
@@ -34,6 +35,12 @@ export const environment = {
   }
 };
 `;
+
+mkdir(directoryPath, '0777', (err) => {
+  if (err) {
+    console.log(err);
+  }
+});
 
 writeFile(targetPath, envConfigFile, (err) => {
   if (err) {
