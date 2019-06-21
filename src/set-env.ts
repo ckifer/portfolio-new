@@ -12,10 +12,9 @@ import { writeFile, mkdir } from 'fs';
 // we get it from yargs's argv object
 const environment = argv.environment;
 let key: any = process.env.FIREBASE_KEY;
-let targetPath = `./src/environments/environment.ts`;
+const targetPath = `./src/environments/environment.ts`;
 const directoryPath = `./src/environments`;
 const isProd = environment === 'prod';
-isProd ? targetPath = `./src/environments/environment.${environment}.ts` : targetPath = targetPath;
 
 if (argv.key !== '' || argv.key != null) {
   key = argv.key;

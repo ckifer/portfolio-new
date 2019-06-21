@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { MaterialModule } from '../modules/material.module';
 import { FirebaseModule } from '../modules/firebase.module';
 import { AngularFireModule } from '@angular/fire';
-import { environment } from '../environments/environment.prod';
+import { environment } from '../environments/environment';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 // import { AppRoutingModule } from '../modules/app-routing.module';
