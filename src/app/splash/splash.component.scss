@@ -1,0 +1,62 @@
+
+.splash {
+    position: relative;
+    height: 100vh;
+    min-height: 500px;
+    max-height: 1080px;
+    background: url();
+    background-size: cover;
+    padding: 15px;
+    overflow: hidden;
+}
+
+.splash-overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(33,125,187,0.8);
+  z-index: 1;
+}
+
+.splash-content {
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.splash-down {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+  bottom: 15px;
+  color: #fff;
+
+  span {
+    font-family: FontAwesome;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 3px solid #a0cfee;
+    text-align: center;
+  }
+
+  #down {
+    animation: pulsate 1.5s ease;
+    animation-iteration-count: infinite;
+    padding-top: 9px;
+  }
+}
+
