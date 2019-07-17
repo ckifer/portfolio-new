@@ -13,4 +13,8 @@ export class SplashComponent implements OnInit {
   ngOnInit() {
   }
 
+  scroll() {
+    document.querySelector('#About').scrollIntoView({ behavior: 'smooth' });
+  }
+
 }
