@@ -1,0 +1,48 @@
+@import './../../variables.scss';
+
+#Projects {
+  padding: 50px 15px;
+  border-bottom: 1px solid #dcd9d9;
+  text-align: center;
+
+  h2 {
+    color: #374054;
+    margin-bottom: 50px;
+  }
+
+  h3 {
+    font-size: 1.5em;
+    font-weight: 300;
+    color: #374054;
+    margin: 0 0 15px 0;
+  }
+
+  p {
+    color: #74808a;
+    margin: 0 0 15px 0;
+    font-size: 0.9em;
+  }
+
+  .project-link {
+    color: $primary;
+    text-decoration: none;
+  }
+
+  .project {
+    text-align: center;
+    width: 33%;
+    margin: 0 auto 30px auto;
+  }
+
+  .center{
+    width: 40%;
+    margin: 10px auto;
+  }
+
+  .main-div {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

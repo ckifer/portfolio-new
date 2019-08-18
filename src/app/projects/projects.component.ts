@@ -9,6 +9,19 @@ export class ProjectsComponent implements OnInit {
 
   constructor() { }
 
+  data: any = [
+    {
+      name: 'project',
+      link: 'IT Intern',
+      description: 'dfrwjhfhberwfbrhewfbrejwkfbrhejwbfrhjewfbrjhebfhrewjkfbhjrewjbfhjkrew'
+    },
+    {
+      name: 'project',
+      link: 'IT Intern',
+      description: 'dfrwjhfhberwfbrhewfbrejwkfbrhejwbfrhjewfbrjhebfhrewjkfbhjrewjbfhjkrew'
+    }
+  ];
+
   ngOnInit() {
   }
 

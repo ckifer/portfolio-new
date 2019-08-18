@@ -1,3 +1,17 @@
-<p>
-  projects works!
-</p>
+<div id="Projects" class="main-div secondary-background">
+  <h2 class="heading">Projects</h2>
+      <mat-card class="project center" *ngFor="let item of data">
+        <div class="project-image">
+          <img src="" alt="">
+        </div>
+        <div class="project-content">
+            <h3 class="project-title">{{ item.name }}</h3>
+            <p class="project-description">
+              {{ item.description }}
+            </p>
+            <a href="" class="project-link">
+              {{ item.link }}
+            </a>
+        </div>
+      </mat-card>
+</div>
