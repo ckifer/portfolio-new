@@ -14,6 +14,13 @@ export class ExperienceComponent implements OnInit {
       employer: 'Kennametal',
       title: 'IT Intern',
       description: 'dfrwjhfhberwfbrhewfbrejwkfbrhejwbfrhjewfbrjhebfhrewjkfbhjrewjbfhjkrew'
+    },
+    {
+      startDate: formatDate(Date.now(), 'LLLL yyyy', 'en'),
+      endDate: formatDate(Date.now(), 'LLLL yyyy', 'en'),
+      employer: 'Kennametal',
+      title: 'IT Intern',
+      description: 'dfrwjhfhberwfbrhewfbrejwkfbrhejwbfrhjewfbrjhebfhrewjkfbhjrewjbfhjkrew'
     }
   ];
 
