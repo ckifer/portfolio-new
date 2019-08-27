@@ -5,6 +5,7 @@ import { FirebaseModule } from '../modules/firebase.module';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 // import { AppRoutingModule } from '../modules/app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +17,7 @@ import { AboutComponent } from './about/about.component';
 import { ExperienceComponent } from './experience/experience.component';
 import { EducationComponent } from './education/education.component';
 import { ProjectsComponent } from './projects/projects.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -27,14 +29,17 @@ import { ProjectsComponent } from './projects/projects.component';
     AboutComponent,
     ExperienceComponent,
     EducationComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
     MaterialModule,
     AngularFireModule.initializeApp(environment.firebase),
     FirebaseModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

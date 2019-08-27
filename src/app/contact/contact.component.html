@@ -1,0 +1,20 @@
+<div id="Contact" class="">
+  <h2 class="heading-secondary">Contact</h2>
+    <form action="https://formspree.io/coltinkifer19@gmail.com" method="POST">
+      <mat-form-field>
+          <input matInput placeholder="Email..." name="email" [formControlName]="emailFormControl"
+          [errorStateMatcher]="matcher">
+        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="emailFormControl.hasError('required')">
+          Email is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <input type="hidden" name="_subject" value="Contact request from personal website">
+      <mat-form-field>
+        <textarea matNativeControl name="message" id="message" placeholder="Message..."></textarea>
+      </mat-form-field>
+      <button mat-button color="primary" type="submit">Send Message</button>
+    </form>
+</div>

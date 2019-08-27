@@ -9,6 +9,25 @@ export class SkillsComponent implements OnInit {
 
   constructor() { }
 
+  data: any = [
+    {
+      skill: 'being cool',
+      order: 1
+    },
+    {
+      skill: 'being cool',
+      order: 1
+    },
+    {
+      skill: 'being cool',
+      order: 1
+    },
+    {
+      skill: 'being cool',
+      order: 1
+    }
+  ];
+
   ngOnInit() {
   }
 

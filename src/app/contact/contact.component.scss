@@ -1,0 +1,10 @@
+@import '../../variables.scss';
+
+#Contact {
+  padding: 50px 15px;
+  background: $primary;
+  text-align: center;
+  mat-form-field {
+    background: #fff;
+  }
+}
