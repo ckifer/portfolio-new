@@ -1,13 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
 import {ErrorStateMatcher} from '@angular/material/core';
-
-export class MyErrorStateMatcher implements ErrorStateMatcher {
-  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
-    const isSubmitted = form && form.submitted;
-    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
-  }
-}
+import { Injectable } from '@angular/core';
 
 @Component({
   selector: 'ck-contact',
@@ -15,14 +8,12 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
-  emailFormControl = new FormControl('', [
-    Validators.required,
-    Validators.email,
-  ]);
-  matcher = new MyErrorStateMatcher();
-  constructor() { }
+  message: string;
+  email: string;
+
+  constructor() {
+  }
 
   ngOnInit() {
   }
-
 }

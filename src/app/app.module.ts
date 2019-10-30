@@ -1,11 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgModule  } from '@angular/core';
 import { MaterialModule } from '../modules/material.module';
 import { FirebaseModule } from '../modules/firebase.module';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 // import { AppRoutingModule } from '../modules/app-routing.module';
 import { AppComponent } from './app.component';
@@ -38,8 +38,7 @@ import { ContactComponent } from './contact/contact.component';
     AngularFireModule.initializeApp(environment.firebase),
     FirebaseModule,
     FontAwesomeModule,
-    ReactiveFormsModule,
-    FormsModule
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
