@@ -1,6 +1,6 @@
 <div id="Projects" class="main-div secondary-background">
   <h2 class="heading">Projects</h2>
-      <mat-card class="project center" *ngFor="let item of data">
+      <mat-card class="project center" *ngFor="let item of data | async">
         <div class="project-image">
           <img src="" alt="">
         </div>

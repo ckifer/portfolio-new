@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'ck-projects',
@@ -7,20 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectsComponent implements OnInit {
 
-  constructor() { }
-
-  data: any = [
-    {
-      name: 'project',
-      link: 'IT Intern',
-      description: 'dfrwjhfhberwfbrhewfbrejwkfbrhejwbfrhjewfbrjhebfhrewjkfbhjrewjbfhjkrew'
-    },
-    {
-      name: 'project',
-      link: 'IT Intern',
-      description: 'dfrwjhfhberwfbrhewfbrejwkfbrhejwbfrhjewfbrjhebfhrewjkfbhjrewjbfhjkrew'
-    }
-  ];
+  data: Observable<any[]>;
+  constructor(db: AngularFirestore) {
+    this.data = db.collection('projects').valueChanges();
+  }
 
   ngOnInit() {
   }

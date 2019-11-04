@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'ck-skills',
@@ -7,26 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SkillsComponent implements OnInit {
 
-  constructor() { }
-
-  data: any = [
-    {
-      skill: 'being cool',
-      order: 1
-    },
-    {
-      skill: 'being cool',
-      order: 1
-    },
-    {
-      skill: 'being cool',
-      order: 1
-    },
-    {
-      skill: 'being cool',
-      order: 1
-    }
-  ];
+  data: Observable<any[]>;
+  constructor(db: AngularFirestore) {
+    this.data = db.collection('skills').valueChanges();
+  }
 
   ngOnInit() {
   }
