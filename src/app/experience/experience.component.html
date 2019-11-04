@@ -4,13 +4,13 @@
             Experience
         </h2>
         <div id="timeline">
-           <div *ngFor="let item of data" class="timeline-item">
+           <div *ngFor="let item of data | async" class="timeline-item">
             <div class="timeline-icon">
               <i class="fa fa-map-marker"></i>
             </div>
             <div>
               <span class="timeline-date">
-                {{ item.startDate }} - {{ item.endDate }}
+                {{ item.startDate.seconds * 1000 | date:'MMMM y' }} - {{ item.endDate.seconds * 1000 | date:'MMMM y' }}
               </span>
               <div class="timeline-content">
                 <h3>{{ item.employer }}</h3>

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { formatDate } from '@angular/common';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'ck-experience',
@@ -7,24 +9,10 @@ import { formatDate } from '@angular/common';
   styleUrls: ['./experience.component.scss']
 })
 export class ExperienceComponent implements OnInit {
-  data: any = [
-    {
-      startDate: formatDate(Date.now(), 'LLLL yyyy', 'en'),
-      endDate: formatDate(Date.now(), 'LLLL yyyy', 'en'),
-      employer: 'Kennametal',
-      title: 'IT Intern',
-      description: 'dfrwjhfhberwfbrhewfbrejwkfbrhejwbfrhjewfbrjhebfhrewjkfbhjrewjbfhjkrew'
-    },
-    {
-      startDate: formatDate(Date.now(), 'LLLL yyyy', 'en'),
-      endDate: formatDate(Date.now(), 'LLLL yyyy', 'en'),
-      employer: 'Kennametal',
-      title: 'IT Intern',
-      description: 'dfrwjhfhberwfbrhewfbrejwkfbrhejwbfrhjewfbrjhebfhrewjkfbhjrewjbfhjkrew'
-    }
-  ];
-
-  constructor() { }
+  data: Observable<any[]>;
+  constructor(db: AngularFirestore) {
+    this.data = db.collection('experience').valueChanges();
+  }
 
   ngOnInit() {
   }

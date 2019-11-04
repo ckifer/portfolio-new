@@ -1,9 +1,9 @@
 <div id="Education">
   <h2 class="heading">Education</h2>
-  <div *ngFor="let item of data" class="education-content">
+  <div *ngFor="let item of data | async" class="education-content">
     <h3>{{ item.school }}</h3>
     <span class="education-date">
-      {{ item.startDate }} - {{ item.endDate }}
+      {{ item.startDate.seconds * 1000 | date:'MMMM y' }} - {{ item.endDate.seconds * 1000 | date:'MMMM y' }}
     </span>
     <h4>{{ item.degree }}</h4>
     <p>{{ item.description }}</p>

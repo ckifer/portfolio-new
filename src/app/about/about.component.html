@@ -6,13 +6,8 @@
     <mat-grid-tile colspan="2" class="about-me heading">
       <h2 class="heading">About Me</h2>
     </mat-grid-tile>
-    <mat-grid-tile colspan="3" class="about-me-text">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex.
-      Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero.
-       Morbi dapibus porta quam laoreet placerat. Donec eu vehicula neque. Donec viverra lorem nunc, tempus euismod eros sollicitudin ut.
-       Quisque et tincidunt libero. Donec id pharetra justo. Proin euismod lacinia dolor, eu scelerisque justo tempus pharetra. Vivamus nunc justo,
-       finibus ut nisl sed, euismod rhoncus nulla. Proin sed magna egestas, egestas ante et, congue eros. In consequat, mauris dapibus tincidunt suscipit,
-       ex libero aliquet diam, at maximus risus enim non leo.</p>
+    <mat-grid-tile *ngFor="let item of about | async" colspan="3" class="about-me-text">
+      <p>{{ item.paragraph }}</p>
     </mat-grid-tile>
     <mat-grid-tile colspan="2">
     </mat-grid-tile>
