@@ -1,22 +1,21 @@
-
-
 // This is good for local dev environments, when it's better to
 // store a projects environment variables in a .gitignore'd file
-require('dotenv').config();
+require("dotenv").config();
 
-import { argv } from 'yargs';
-import { writeFile, mkdir } from 'fs';
+import { argv } from "yargs";
+import { writeFile, mkdir } from "fs";
 
 // Would be passed to script like this:
 // `ts-node set-env.ts --environment=dev`
 // we get it from yargs's argv object
 const environment = argv.environment;
-let key: any = process.env.FIREBASE_KEY;
+let key: any = process.env.FIREBASE_KEY || null;
 const targetPath = `./src/environments/environment.ts`;
 const directoryPath = `./src/environments`;
-const isProd = environment === 'prod';
+const isProd = environment === "prod";
+console.log(key);
 
-if (argv.key !== '' || argv.key != null) {
+if (!key && (argv.key !== "" || argv.key != null || argv.key !== undefined)) {
   key = argv.key;
 }
 
@@ -35,7 +34,7 @@ export const environment = {
 };
 `;
 
-mkdir(directoryPath, '0777', (err) => {
+mkdir(directoryPath, "0777", (err) => {
   if (err) {
     console.log(err);
   }
