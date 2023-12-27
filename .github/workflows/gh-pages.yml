@@ -33,7 +33,7 @@ jobs:
           node-version: 12
           cache: 'npm'
       - name: Install dependencies
-        run: npm install
+        run: npm install --legacy-peer-deps
       - name: Build with npm
         env: 
           FIREBASE_KEY: ${{ secrets.FIREBASE_KEY }}
