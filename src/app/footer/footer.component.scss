@@ -1,4 +1,3 @@
-
 @import "~variables.scss";
 
 footer {
@@ -6,13 +5,14 @@ footer {
 
   ul {
     text-decoration: none;
-    display: block;
+    display: flex;
+    flex-wrap: wrap;
     list-style: none;
-    margin: 5px 0 0 0;
+    // margin: 5px 0 0 0;
     li {
-      float: left;
-      padding: 20px;
-      a { 
+      // float: left;
+      padding: 0px 20px;
+      a {
         text-decoration: none;
         color: grey;
         :hover {
@@ -21,7 +21,7 @@ footer {
         i {
           font-size: 3em;
         }
-       }
-     }
+      }
+    }
   }
 }

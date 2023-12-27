@@ -11,7 +11,7 @@ export class ProjectsComponent implements OnInit {
 
   data: Observable<any[]>;
   constructor(db: AngularFirestore) {
-    this.data = db.collection('projects').valueChanges();
+    this.data = db.collection('projects', ref => ref.orderBy('order')).valueChanges();
   }
 
   ngOnInit() {

@@ -1,14 +1,16 @@
 <footer>
-    <mat-grid-list cols="2" rowHeight="6:1">
-        <mat-grid-tile>Copyright &copy; {{ year }} Coltin Kifer</mat-grid-tile>
-        <mat-grid-tile class="social">
-          <ul>
-            <li *ngFor="let item of icons | async">
-              <a [href]="item.url" target="_blank">
-                <i [ngClass]="'fab ' + item.icon "></i>
-              </a>
-            </li>
-          </ul>
-        </mat-grid-tile>
-    </mat-grid-list>
+  <mat-grid-list cols="12" rowHeight="100px">
+    <mat-grid-tile colspan="4"
+      >Copyright &copy; {{ year }} Coltin Kifer</mat-grid-tile
+    >
+    <mat-grid-tile colspan="8" class="social">
+      <ul>
+        <li *ngFor="let item of icons | async">
+          <a [href]="item.url" target="_blank">
+            <i [ngClass]="'fab ' + item.icon"></i>
+          </a>
+        </li>
+      </ul>
+    </mat-grid-tile>
+  </mat-grid-list>
 </footer>

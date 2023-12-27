@@ -1,24 +1,24 @@
 <div id="Experience" class="secondary-background">
-    <mat-grid-list cols="1" rowHeight="1:1">
-        <h2 class="heading">
-            Experience
-        </h2>
-        <div id="timeline">
-           <div *ngFor="let item of data | async" class="timeline-item">
-            <div class="timeline-icon">
-              <i class="fa fa-map-marker"></i>
-            </div>
-            <div>
-              <span class="timeline-date">
-                {{ item.startDate.seconds * 1000 | date:'MMMM y' }} - {{ item.endDate.seconds * 1000 | date:'MMMM y' }}
-              </span>
-              <div class="timeline-content">
-                <h3>{{ item.employer }}</h3>
-                <h4>{{ item.title }}</h4>
-                <p>{{ item.description }}</p>
-              </div>
-            </div>
-           </div>
+  <h2 class="heading">Experience</h2>
+  <div id="timeline">
+    <div *ngFor="let item of data | async" class="timeline-item">
+      <div class="timeline-icon">
+        <i class="fa fa-map-marker"></i>
+      </div>
+      <div>
+        <span class="timeline-date">
+          {{ item.startDate.seconds * 1000 | date : "MMMM y" }} -
+          <span *ngIf="item.endDate; else elseBlock">
+            {{ item.endDate?.seconds * 1000 | date : "MMMM y" }}
+          </span>
+          <ng-template #elseBlock>Current</ng-template>
+        </span>
+        <div class="timeline-content">
+          <h3>{{ item.employer }}</h3>
+          <h4>{{ item.title }}</h4>
+          <p>{{ item.description }}</p>
         </div>
-    </mat-grid-list>
+      </div>
+    </div>
+  </div>
 </div>

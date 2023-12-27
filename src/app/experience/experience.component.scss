@@ -1,4 +1,4 @@
-@import '../../variables.scss';
+@import "../../variables.scss";
 
 #Experience {
   padding: 50px 15px;
@@ -10,11 +10,13 @@
   margin: 30px auto 0 auto;
   position: relative;
   max-width: 1000px;
+  display: flex;
+  flex-direction: column;
 }
 
 #timeline:before {
   position: absolute;
-  content: '';
+  content: "";
   top: 0;
   bottom: 0;
   left: 303px;
@@ -27,11 +29,11 @@
 
 #timeline:after {
   position: absolute;
-  content: '';
+  content: "";
   width: 3px;
   height: 40px;
   background: $primary;
-  background: linear-gradient(to bottom, $primary, rgba(52,152,219,0));
+  background: linear-gradient(to bottom, $primary, rgba(52, 152, 219, 0));
   top: 100%;
   left: 303px;
 }
@@ -93,5 +95,25 @@
     color: #74808a;
     font-size: 0.9em;
     margin: 0;
+  }
+}
+
+@media only screen and (max-width: 959px) {
+  .timeline-content {
+    margin-left: auto;
+  }
+
+  .timeline-icon {
+    display: none;
+  }
+
+  .timeline-date {
+    position: relative;
+    margin-bottom: 16px;
+    margin-left: 2px;
+    width: auto;
+    text-align: left;
+    left: auto;
+    display: flex;
   }
 }

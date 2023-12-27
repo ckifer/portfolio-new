@@ -1,10 +1,20 @@
-
 .about {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  text-align: center;
   padding: 75px 15px;
   border-bottom: 1px solid #dcd9d9;
 }
 
 .about-me-text {
+  padding: 25px 0px;
   color: #74808a;
   margin: 0;
+  flex-grow: 2;
+}
+
+.flex-item {
+  align-self: center;
+  flex-basis: 33%;
 }

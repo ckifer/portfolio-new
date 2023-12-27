@@ -11,7 +11,7 @@ export class SkillsComponent implements OnInit {
 
   data: Observable<any[]>;
   constructor(db: AngularFirestore) {
-    this.data = db.collection('skills').valueChanges();
+    this.data = db.collection('skills', ref => ref.orderBy('order')).valueChanges();
   }
 
   ngOnInit() {
